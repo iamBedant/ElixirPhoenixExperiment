@@ -7,6 +7,7 @@ defmodule WhatsUpWeb.Router do
 
   scope "/api", WhatsUpWeb do
     pipe_through :api
+    resources "/tasks", TaskController, except: [:new, :edit]
   end
 
   pipeline :browser do
